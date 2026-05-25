@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Om Moon — Frontend Developer & Cybersecurity Enthusiast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ░░ LOADING SCREEN ░░ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">om_moon10</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <div class="loader-text">Initializing Portfolio<span class="blink">_</span></div>
+    </div>
+  </div>
+
+  <!-- ░░ CURSOR ░░ -->
+  <div id="cursor-glow"></div>
+  <div id="cursor-dot"></div>
+
+  <!-- ░░ SCROLL PROGRESS ░░ -->
+  <div id="scroll-progress"></div>
+
+  <!-- ░░ PARTICLE CANVAS ░░ -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ░░ NAVBAR ░░ -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">om_moon10<span class="accent">.</span></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════
+       1. HERO SECTION
+  ══════════════════════════════════ -->
+  <section id="home" class="hero">
+    <div class="hero-bg-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <div class="hero-container">
+      <div class="hero-text reveal-left">
+        <p class="hero-greeting">
+          <span class="terminal-tag">&lt;hello world /&gt;</span>
+        </p>
+        <h1 class="hero-name">Om S. Moon</h1>
+        <div class="hero-title-wrap">
+          <span class="hero-title-prefix">I'm a </span>
+          <span class="typing-text" id="typing-text"></span>
+          <span class="cursor-blink">|</span>
+        </div>
+        <p class="hero-tagline">
+          Building modern digital experiences with code,<br class="hide-mobile" />
+          creativity, and cybersecurity.
+        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-primary">
+            <span>View Projects</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="assets/Om_Moon_Resume.pdf" class="btn btn-ghost" target="_blank" download>
+            <span>Download Resume</span>
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          </a>
+        </div>
+
+        <!-- Animated stats -->
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num" data-target="2">0</span>+
+            <span class="stat-label">Internships</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-target="3">0</span>+
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-target="10">0</span>+
+            <span class="stat-label">Technologies</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal-right">
+        <div class="avatar-ring">
+          <div class="ring ring-1"></div>
+          <div class="ring ring-2"></div>
+          <div class="ring ring-3"></div>
+          <div class="avatar-frame">
+            <div class="avatar-placeholder">
+              <img src="images/profile.png" alt="Om Moon Profile Photo">
+            </div>
+          </div>
+          <!-- Floating tech badges -->
+          <div class="float-badge badge-html">HTML</div>
+          <div class="float-badge badge-js">JS</div>
+          <div class="float-badge badge-sec">CSS</div>
+          <div class="float-badge badge-java">Java</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       2. ABOUT SECTION
+  ══════════════════════════════════ -->
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="section-label reveal">// about_me</div>
+      <h2 class="section-title reveal">Who I Am</h2>
+
+      <div class="about-grid">
+        <div class="about-terminal reveal-left">
+          <div class="terminal-header">
+            <span class="t-dot t-red"></span>
+            <span class="t-dot t-yellow"></span>
+            <span class="t-dot t-green"></span>
+            <span class="t-title">om@portfolio:~$</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="t-cmd">$ whoami</span></p>
+            <p class="t-out">Om Moon — CS Tech Student & Dev</p>
+            <p><span class="t-cmd">$ cat education.txt</span></p>
+            <p class="t-out">Polytechnic | Computer Technology</p>
+            <p><span class="t-cmd">$ ls interests/</span></p>
+            <p class="t-out">web-dev/ android/ cybersecurity/ design/</p>
+            <p><span class="t-cmd">$ cat status.txt</span></p>
+            <p class="t-out"><span class="t-green-text">● Available for opportunities</span></p>
+            <p class="t-cursor-line"><span class="t-cmd">$ </span><span class="blink">▌</span></p>
+          </div>
+        </div>
+
+        <div class="about-content reveal-right">
+          <p class="about-intro">
+            Hey! I'm Om, a passionate <strong>Computer Science student</strong> with a sharp focus on building things that matter — beautiful frontends, secure systems, and mobile experiences that just work.
+          </p>
+          <p class="about-body">
+            Currently pursuing my Engineering degree in Computer Science Engineering @Nagpur Institute of Technology, Nagpur, I've completed real-world <strong>internships in Frontend Development and Cybersecurity</strong>, giving me hands-on exposure to industry standards. I love bridging the gap between clean UI and secure architecture.
+          </p>
+          <p class="about-body">
+            Whether it's crafting responsive UIs, developing Android apps in <strong>Java & Android Studio</strong>, or diving deep into ethical hacking — I'm always learning, always building. I believe great tech solves real problems for real people.
+          </p>
+
+          <div class="about-chips">
+            <span class="chip">🎓 B.Tech | Computer Science Engineering</span>
+            <span class="chip">🎓 Poly | Computer Tech</span>
+            <span class="chip">🔐 Cybersecurity</span>
+            <span class="chip">📱 Android Dev</span>
+            <span class="chip">⚡ Quick Learner</span>
+            <span class="chip">🌍 Nagpur, India</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       3. SKILLS SECTION
+  ══════════════════════════════════ -->
+  <section id="skills" class="skills section">
+    <div class="container">
+      <div class="section-label reveal">// skill_set</div>
+      <h2 class="section-title reveal">What I Work With</h2>
+
+      <div class="skills-grid">
+
+        <!-- Frontend -->
+        <div class="skill-category reveal">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">🖥️</span>
+            <span>Frontend</span>
+          </div>
+          <div class="skill-cards">
+            <div class="skill-card" style="--delay:0.05s">
+              <div class="skill-icon html-icon">&#60;/&#62;</div>
+              <span>HTML5</span>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:90%"></div></div>
+            </div>
+            <div class="skill-card" style="--delay:0.1s">
+              <div class="skill-icon css-icon">#</div>
+              <span>CSS3</span>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:85%"></div></div>
+            </div>
+            <div class="skill-card" style="--delay:0.15s">
+              <div class="skill-icon js-icon">JS</div>
+              <span>JavaScript</span>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:75%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Programming -->
+        <div class="skill-category reveal">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">⚙️</span>
+            <span>Programming</span>
+          </div>
+          <div class="skill-cards">
+            <div class="skill-card" style="--delay:0.05s">
+              <div class="skill-icon java-icon">☕</div>
+              <span>Java</span>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:80%"></div></div>
+            </div>
+            <div class="skill-card" style="--delay:0.1s">
+              <div class="skill-icon cpp-icon">C++</div>
+              <span>C++</span>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:65%"></div></div>
+            </div>
+            <div class="skill-card" style="--delay:0.1s">
+              <div class="skill-icon cpp-icon">C++</div>
+              <span>Python</span>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:45%"></div></div>
+            </div>
+            <div class="skill-card" style="--delay:0.15s">
+              <div class="skill-icon c-icon">C</div>
+              <span>C</span>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:70%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cybersecurity -->
+        <div class="skill-category reveal">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">🔐</span>
+            <span>Cybersecurity</span>
+          </div>
+          <div class="skill-cards">
+            <div class="skill-card" style="--delay:0.05s">
+              <div class="skill-icon sec-icon">🛡️</div>
+              <span>Network Security</span>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:72%"></div></div>
+            </div>
+            <div class="skill-card" style="--delay:0.1s">
+              <div class="skill-icon sec-icon">🔍</div>
+              <span>Threat Analysis</span>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:68%"></div></div>
+            </div>
+            <div class="skill-card" style="--delay:0.15s">
+              <div class="skill-icon sec-icon">💻</div>
+              <span>Ethical Hacking</span>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:60%"></div></div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-category reveal">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">🛠️</span>
+            <span>Tools</span>
+          </div>
+          <div class="skill-cards">
+            <div class="skill-card" style="--delay:0.05s">
+              <div class="skill-icon git-icon">⎇</div>
+              <span>Git & GitHub</span>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:80%"></div></div>
+            </div>
+            <div class="skill-card" style="--delay:0.1s">
+              <div class="skill-icon android-icon">🤖</div>
+              <span>Android Studio</span>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:75%"></div></div>
+            </div>
+            <div class="skill-card" style="--delay:0.15s">
+              <div class="skill-icon vscode-icon">&#60;&#62;</div>
+              <span>VS Code</span>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:90%"></div></div>
+            </div>
+            <div class="skill-card" style="--delay:0.2s">
+              <div class="skill-icon canva-icon">✦</div>
+              <span>Canva</span>
+              <div class="skill-bar"><div class="skill-fill" style="--pct:70%"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       4. EXPERIENCE SECTION
+  ══════════════════════════════════ -->
+  <section id="experience" class="experience section">
+    <div class="container">
+      <div class="section-label reveal">// experience</div>
+      <h2 class="section-title reveal">Where I've Worked</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item reveal-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tcard-header">
+              <div>
+                <h3 class="tcard-role">Frontend Development Intern</h3>
+                <p class="tcard-company">Unisoft, Nagpur</p>
+              </div>
+              <span class="tcard-badge">Internship</span>
+            </div>
+            <ul class="tcard-list">
+              <li>Built and maintained responsive web interfaces using HTML, CSS & JavaScript</li>
+              <li>Learned production-level responsive UI development practices</li>
+              <li>Collaborated on live projects with mentor supervision</li>
+              <li>Gained exposure to real-world frontend workflows and version control</li>
+            </ul>
+            <div class="tcard-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive UI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item right reveal-right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tcard-header">
+              <div>
+                <h3 class="tcard-role">Cybersecurity Intern</h3>
+                <p class="tcard-company">Persevex Cybersecurity</p>
+              </div>
+              <span class="tcard-badge tcard-badge-sec">Security</span>
+            </div>
+            <ul class="tcard-list">
+              <li>Studied cybersecurity fundamentals — threats, vulnerabilities, and mitigation</li>
+              <li>Participated in threat monitoring exercises and security awareness sessions</li>
+              <li>Learned practical ethical hacking and OSINT techniques</li>
+              <li>Understood real-world security incident response and documentation</li>
+            </ul>
+            <div class="tcard-tags">
+              <span>Network Security</span><span>Threat Analysis</span><span>OSINT</span><span>Ethical Hacking</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       5. PROJECTS SECTION
+  ══════════════════════════════════ -->
+  <section id="projects" class="projects section">
+    <div class="container">
+      <div class="section-label reveal">// projects</div>
+      <h2 class="section-title reveal">Things I've Built</h2>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card reveal" style="--delay:0s">
+          <div class="project-img">
+            <div class="project-img-placeholder">
+              <div class="project-img-icon">📱</div>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn">GitHub</a>
+              <a href="#" class="overlay-btn overlay-btn-live">Live Demo</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-number">01</div>
+            <h3 class="project-title">Smart Medii</h3>
+            <p class="project-desc">
+              An Android healthcare application built in Java, focused on improving medical accessibility and enabling smart healthcare interactions between patients and providers.
+            </p>
+            <div class="project-tech">
+              <span>Android Studio</span>
+              <span>Java</span>
+              <span>XML</span>
+            </div>
+          </div>
+          <div class="project-glow"></div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card reveal" style="--delay:0.1s">
+          <div class="project-img">
+            <div class="project-img-placeholder project-img-2">
+              <div class="project-img-icon">🛡️</div>
+            </div>
+            <div class="project-overlay">
+              <a href="https://github.com/om-moon10/guardianbox" class="overlay-btn">GitHub</a>
+              <a href="https://guardianbox.vercel.app" class="overlay-btn overlay-btn-live">Live Demo</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-number">02</div>
+            <h3 class="project-title">GuardianBox</h3>
+            <p class="project-desc">
+              A cybersecurity-focused platform designed for secure monitoring, real-time protection, and threat containment with modern security architecture.
+            </p>
+            <div class="project-tech">
+              <span>JavaScript</span>
+              <span>Security Tools</span>
+              <span>Security Concepts</span>
+            </div>
+          </div>
+          <div class="project-glow"></div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card reveal" style="--delay:0.2s">
+          <div class="project-img">
+            <div class="project-img-placeholder project-img-3">
+              <div class="project-img-icon">📊</div>
+            </div>
+            <div class="project-overlay">
+              <a href="https://github.com/om-moon10/threatview" class="overlay-btn">GitHub</a>
+              <a href="https://threat-view-port.vercel.app" class="overlay-btn overlay-btn-live">Live Demo</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-number">03</div>
+            <h3 class="project-title">ThreatView</h3>
+            <p class="project-desc">
+              A modern cybersecurity dashboard for visualizing and monitoring threat activities with real-time analytics, clean dashboard UI, and intuitive data presentation.
+            </p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Dashboard UI</span>
+            </div>
+          </div>
+          <div class="project-glow"></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       6. ACHIEVEMENTS SECTION
+  ══════════════════════════════════ -->
+  <section id="achievements" class="achievements section">
+    <div class="container">
+      <div class="section-label reveal">// achievements</div>
+      <h2 class="section-title reveal">Milestones</h2>
+
+      <div class="achievements-grid">
+        <div class="achievement-card reveal" style="--delay:0s">
+          <div class="ach-icon">🏆</div>
+          <h3>Frontend Internship</h3>
+          <p>Completed a professional Frontend Development Internship at Unisoft, Nagpur with hands-on real-world project exposure.</p>
+        </div>
+        <div class="achievement-card reveal" style="--delay:0.1s">
+          <div class="ach-icon">🔐</div>
+          <h3>Cybersecurity Internship</h3>
+          <p>Completed certified Cybersecurity Internship at Persevex, gaining practical knowledge in network security and threat analysis.</p>
+        </div>
+        <div class="achievement-card reveal" style="--delay:0.2s">
+          <div class="ach-icon">💡</div>
+          <h3>Hands-on Development</h3>
+          <p>Built multiple production-ready projects spanning web dashboards, cybersecurity tools, and mobile applications.</p>
+        </div>
+        <div class="achievement-card reveal" style="--delay:0.3s">
+          <div class="ach-icon">📱</div>
+          <h3>Android Development</h3>
+          <p>Independently developed and deployed the Smart Medii Android Application using Java and Android Studio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       7. PROFILES SECTION
+  ══════════════════════════════════ -->
+  <section id="profiles" class="profiles section">
+    <div class="container">
+      <div class="section-label reveal">// find_me</div>
+      <h2 class="section-title reveal">Online Presence</h2>
+
+      <div class="profiles-grid">
+        <a href="https://github.com/om-moon10" target="_blank" class="profile-card reveal" style="--delay:0s">
+          <div class="profile-icon github-icon-bg">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.745 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </div>
+          <h3>GitHub</h3>
+          <p>Check my code & open source work</p>
+          <span class="profile-link">@om-moon10 →</span>
+        </a>
+
+        <a href="https://linkedin.com/in/om-moon10" target="_blank" class="profile-card reveal" style="--delay:0.1s">
+          <div class="profile-icon linkedin-icon-bg">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </div>
+          <h3>LinkedIn</h3>
+          <p>Connect professionally</p>
+          <span class="profile-link">Om Moon →</span>
+        </a>
+
+        <a href="https://instagram.com/om_moon10" target="_blank" class="profile-card reveal" style="--delay:0.2s">
+          <div class="profile-icon insta-icon-bg">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </div>
+          <h3>Instagram</h3>
+          <p>Behind the scenes & updates</p>
+          <span class="profile-link">@om_moon10 →</span>
+        </a>
+
+        <a href="mailto:omsurendramoon@gmail.com" class="profile-card reveal" style="--delay:0.3s">
+          <div class="profile-icon email-icon-bg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h3>Email</h3>
+          <p>Let's talk! Reach out directly</p>
+          <span class="profile-link">omsurendramoon@gmail.com →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       8. CONTACT SECTION
+  ══════════════════════════════════ -->
+  <section id="contact" class="contact section">
+    <div class="container">
+      <div class="section-label reveal">// contact</div>
+      <h2 class="section-title reveal">Get In Touch</h2>
+      <p class="contact-sub reveal">Have a project in mind or just want to say hi? My inbox is always open.</p>
+
+      <div class="contact-wrapper">
+        <div class="contact-info reveal-left">
+          <div class="contact-info-item">
+            <span class="ci-icon">📍</span>
+            <div>
+              <strong>Location</strong>
+              <p>Nagpur, Maharashtra, India</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="ci-icon">📧</span>
+            <div>
+              <strong>Email</strong>
+              <p>omsurendramoon@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="ci-icon">💼</span>
+            <div>
+              <strong>Status</strong>
+              <p class="status-available">● Open to Opportunities</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form reveal-right" id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" autocomplete="off" required />
+            <span class="form-line"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="off" required />
+            <span class="form-line"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            <span class="form-line"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span>Send Message</span>
+            <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+          <div class="form-success" id="form-success">
+            ✅ Message sent! I'll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       9. FOOTER
+  ══════════════════════════════════ -->
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo">OM<span class="accent">.</span></a>
+          <p>Frontend Developer · Cybersecurity Enthusiast · Android Developer</p>
+        </div>
+
+        <nav class="footer-nav">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="footer-socials">
+          <a href="https://github.com/om-moon10" target="_blank" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.745 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/om-moon10" target="_blank" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://instagram.com/om_moon10" target="_blank" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Om Moon. Crafted with <span class="accent">❤</span> & Code.</p>
+        <p class="footer-mono">Built with HTML · CSS · JS</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
